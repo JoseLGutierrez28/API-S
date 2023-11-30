@@ -27,7 +27,12 @@ function ejecutarApiCat() {
             img.src = data[0].url;
             document.getElementById('idCat').innerHTML = "ID: " + data[0].id;
         })
-        .catch(err => console.log('Error: ' + err))
+        .catch(err => {
+            Swal.fire({
+                icon: "error",
+                title: "Ups! Ocurrio un error, por favor vuelve a intentarlo luego: " + err,
+            });
+        })
 }
 
 function ejecutarApiDog() {
@@ -41,7 +46,12 @@ function ejecutarApiDog() {
             dog.src = data[0].url;
             document.getElementById('idDog').innerHTML = "ID: " + data[0].id;
         })
-        .catch(err => console.log('Error: ' + err))
+        .catch(err => {
+            Swal.fire({
+                icon: "error",
+                title: "Ups! Ocurrio un error, por favor vuelve a intentarlo luego: " + err,
+            });
+        })
 }
 
 

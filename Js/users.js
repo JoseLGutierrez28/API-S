@@ -26,7 +26,12 @@ function ejecutarApi() {
             let photo = document.querySelector('#photo');
             photo.src = data.results[0].picture.large
         })
-        .catch(err => console.log('Error: ' + err))
+        .catch(err => {
+            Swal.fire({
+                icon: "error",
+                title: "Ups! Ocurrio un error, por favor vuelve a intentarlo luego: " + err,
+            });
+        })
 }
 
 function infoMail() {

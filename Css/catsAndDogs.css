@@ -10,12 +10,31 @@ body {
 
 h1 {
     text-align: center;
-    margin: 60px 40px;
+    margin: 32px 0px;
     font-size: 2.25em;
 }
 
 h1:hover {
     text-shadow: 2px 2px 4px #6980a7;
+}
+
+.container-back {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.container-back svg {
+    height: 2rem;
+    width: 2rem;
+    color: black;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.container-back svg:hover {
+    background-color: #606c88;
+    color: white;
 }
 
 .container-cards {

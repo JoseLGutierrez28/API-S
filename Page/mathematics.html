@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/mathematics.css">
+    <title>Mathematics</title>
+</head>
+
+<body>
+    <main>
+        <article>
+            <h1 class="title">Operaciones Matematicas</h1>
+            <div class="container-back">
+                <a href="../index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5" />
+                    </svg>
+                </a>
+            </div>
+            <section class="layout">
+                <div class="container">
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <h2 class="title-operation">SUMA</h2>
+                            <div class="container-input">
+                                <label for="" id="expresionMas"></label>
+                                <input maxlength="4" value="" class="input" name="text" type="text" placeholder="???"
+                                    id="respuestaS" />
+                            </div>
+                            <button class="btns-verificar-generar" id="verificarSuma">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8" />
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <h2 class="title-operation">RESTA</h2>
+                            <div class="container-input">
+                                <label for="" id="expresionMenos"></label>
+                                <input maxlength="4" value="" class="input" name="text" type="text" placeholder="???"
+                                    id="respuestR" />
+                            </div>
+                            <button class="btns-verificar-generar" id="verificarResta">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <h2 class="title-operation">MULTIPLICACIÓN</h2>
+                            <div class="container-input">
+                                <label for="" id="expresionMulti"></label>
+                                <input maxlength="4" value="" class="input" name="text" type="text" placeholder="???"
+                                    id="respuestaM" />
+                            </div>
+                            <button class="btns-verificar-generar" id="verificarMulti">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-slash-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <h2 class="title-operation">DIVISIÓN</h2>
+                            <div class="container-input">
+                                <label for="" id="expresionDivi">26 + 95 =</label>
+                                <input maxlength="4" value="" class="input" name="text" type="text" placeholder="???"
+                                    id="respuestaD" />
+                            </div>
+                            <button class="btns-verificar-generar" id="verificarDivi">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Js/mathematics.js"></script>
+</body>
+
+</html>

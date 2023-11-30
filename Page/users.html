@@ -12,40 +12,52 @@
 
 <body>
     <main>
-        <section>
-            <h1>Random Users</h1>
-            <div class="container-cards">
-                <div class="card">
-                    <div class="img">
-                        <picture>
-                            <img src="" id="photo" alt="photo User" width="100%">
-                            <figcaption></figcaption>
-                        </picture>
-                    </div>
-                    <span id="description"></span>
-                    <p class="info" id="infoUser"></p>
-                    <div class="share">
-                        <a href="#" onmouseover="infoUser()">
-                            <i class="bi bi-person-check"></i>
-                        </a>
-                        <a href="#" onmouseover="infoMail()">
-                            <i class="bi bi-envelope-at"></i>
-                        </a>
-                        <a href="#" onmouseover="infoBirthday()">
-                            <i class="bi bi-calendar-date"></i>
-                        </a>
-                        <a href="#" onmouseover="infoAddress()">
-                            <i class="bi bi-geo-alt"></i>
-                        </a>
-                        <a href="#" onmouseover="infoPhone()">
-                            <i class="bi bi-telephone"></i>
-                        </a>
-                    </div>
-                    <button id="GenerateUser">Generar</button>
+        <article>
+            <section>
+                <h1>Random Users</h1>
+                <div class="container-back">
+                    <a href="../index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5" />
+                        </svg>
+                    </a>
                 </div>
-            </div>
-        </section>
+                <div class="container-cards">
+                    <div class="card">
+                        <div class="img">
+                            <picture>
+                                <img src="" id="photo" alt="photo User" width="100%">
+                                <figcaption></figcaption>
+                            </picture>
+                        </div>
+                        <span id="description"></span>
+                        <p class="info" id="infoUser"></p>
+                        <div class="share">
+                            <a href="#" onmouseover="infoUser()">
+                                <i class="bi bi-person-check"></i>
+                            </a>
+                            <a href="#" onmouseover="infoMail()">
+                                <i class="bi bi-envelope-at"></i>
+                            </a>
+                            <a href="#" onmouseover="infoBirthday()">
+                                <i class="bi bi-calendar-date"></i>
+                            </a>
+                            <a href="#" onmouseover="infoAddress()">
+                                <i class="bi bi-geo-alt"></i>
+                            </a>
+                            <a href="#" onmouseover="infoPhone()">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                        </div>
+                        <button id="GenerateUser">Generar</button>
+                    </div>
+                </div>
+            </section>
+        </article>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Js/users.js"></script>
 </body>
 
