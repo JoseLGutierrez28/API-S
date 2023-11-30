@@ -166,7 +166,7 @@ input::placeholder {
 
 @media (max-width:480px) {
     body {
-        height: 160vh;
+        height: 180vh;
     }
 
     .layout {
