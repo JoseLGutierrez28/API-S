@@ -173,6 +173,5 @@ input::placeholder {
     .layout {
         grid-template-columns: 1fr;
         gap: 30px;
-        margin-right: 13px;
     }
 }
