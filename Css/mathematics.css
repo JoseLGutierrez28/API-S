@@ -37,7 +37,6 @@ body {
     color: white;
 }
 
-
 .layout {
     display: grid;
     place-items: center;
@@ -167,7 +166,7 @@ input::placeholder {
 
 @media (max-width:480px) {
     body {
-        height: 144vh;
+        height: 160vh;
     }
 
     .layout {
