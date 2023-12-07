@@ -1,22 +1,24 @@
 const URL = "https://api.escuelajs.co/api/v1/products"
-let dataApi;
-
 let img = document.getElementById('imgProduct');
 let titleProduct = document.getElementById('titleProduct');
 let priceProduct = document.getElementById('priceProduct');
 let mainSection = document.querySelector('.main-container');
 let i = 1;
-
-let price = 0;
-let totalprice = 0;
-let preciosnuevo = 0;
-let precioantiguo = 0;
+let contadores = {};
 let idDelElemento;
 
+callApi()
 
-window.onload = function () {
-    callApi()
+function opencar() {
+    var x = document.querySelector('.main-orders');
+    if (x.style.display === "none") x.style.display = "block";
+    else x.style.display = "none";
+    updatePrice()
 }
+
+function closeOrders() {
+    document.querySelector('.main-orders').style.display = "none";
+};
 
 function callApi() {
     fetch(URL)
@@ -25,9 +27,8 @@ function callApi() {
             else throw new Error('Error')
         })
         .then(data => {
-            dataApi = data;
 
-            dataApi.forEach(resultados => {
+            data.forEach(resultados => {
 
                 var createDivElement = document.createElement("div");
 
@@ -80,10 +81,7 @@ function addtocar(clickedButton) {
     let title = card.querySelector('.card-title').innerText;
     price = card.querySelector('.card-price').innerText;
     let imageSrc = card.querySelector('.img img').src;
-
-
     idDelElemento = card.getAttribute('id');
-
 
     document.querySelector('.main-orders').style.display = "block";
     let createproductElement = document.createElement("div");
@@ -119,7 +117,7 @@ function addtocar(clickedButton) {
                                 </svg>
                             </button>
                         </div>
-                        <div class="price-mis-productos" id="cantidaddeproductos${idDelElemento}">${i}</div>
+                        <div class="price-mis-productos cantidaddeproductos${idDelElemento}" id="cantidaddeproductos">${i}</div>
                         <div>
                             <button class="buttonmore" onclick="addmore(${idDelElemento})">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -135,78 +133,44 @@ function addtocar(clickedButton) {
         </div>`
 
     divprosucto.appendChild(createproductElement)
-
-    preciosnuevo = price.replace(/\s/g, "").replace("$", "");
-    totalprice = parseInt(preciosnuevo) + parseInt(totalprice);
-    document.querySelector('.totalprice').innerHTML = "$ " + totalprice;
+    updatePrice()
 }
 
-function closeOrders() {
-    document.querySelector('.main-orders').style.display = "none";
-};
-
 function deleteproduct(idcard) {
-
     document.querySelector(`.conteainerallinfo#id${idcard}`).remove()
     document.querySelector(`#addToCartButton${idcard}`).disabled = false;
 
-    let preciosaleliminar = document.querySelectorAll("#precios");
-    let cantidad = document.querySelector(`#cantidaddeproductos${idcard}`)?.textContent;
-
-
-    let total = 0;
-
-    for (const nuevosprecios of preciosaleliminar) {
-
-        let restantes = nuevosprecios.textContent
-        console.log(restantes.length);
-        let preciosnuevov1 = restantes.replace(/\s/g, "").replace("$", "");
-        total = parseInt(preciosnuevov1) + parseInt(total);
-    }
-    if (!cantidad) {
-        document.querySelector('.totalprice').innerHTML = "$ 0";
-    }
-    else {
-        document.querySelector('.totalprice').innerHTML = "$ " + total * cantidad;
-    }
+    updatePrice()
 }
 
 function addmore(aumentar) {
-    i++;
-    document.querySelector(`#cantidaddeproductos${aumentar}`).innerHTML = i;
-    let cantidad = document.querySelector(`#cantidaddeproductos${aumentar}`).textContent;
+    if (!contadores[aumentar]) contadores[aumentar] = 2;
+    else contadores[aumentar]++;
+    document.querySelector(`.cantidaddeproductos${aumentar}`).innerHTML = contadores[aumentar];
 
-    let preciosaleliminar = document.querySelectorAll("#precios");
-
-    let total = 0;
-    for (const nuevosprecios of preciosaleliminar) {
-
-        let restantes = nuevosprecios.textContent
-        let preciosnuevov1 = restantes.replace(/\s/g, "").replace("$", "");
-        total = parseInt(preciosnuevov1) + parseInt(total);
-    }
-    document.querySelector('.totalprice').innerHTML = "$ " + total * cantidad;
-
+    updatePrice()
 }
 
 function minusmore(disminuir) {
+    contadores[disminuir]--;
+    if (contadores[disminuir] <= 1) contadores[disminuir] = 1;
+    document.querySelector(`.cantidaddeproductos${disminuir}`).innerHTML = contadores[disminuir];
 
-    i--;
-    if (i <= 1) i = 1;
-
-    document.querySelector(`#cantidaddeproductos${disminuir}`).innerHTML = i;
+    updatePrice()
+}
 
 
-    let preciosaleliminar = document.querySelectorAll("#precios");
-    let cantidad = document.querySelector(`#cantidaddeproductos${disminuir}`).textContent;
+function updatePrice() {
+    let todos = document.querySelectorAll(".textBox");
+    if (todos.length === 0) document.querySelector('.totalprice').innerHTML = "$ 0";
 
     let total = 0;
-    for (const nuevosprecios of preciosaleliminar) {
+    todos.forEach(element => {
+        let precio = element.querySelector("#precios")?.textContent;
+        let preciosnuevovsinsignopesos = precio.replace(/\s/g, "").replace("$", "");
+        let cantidad = element.querySelector("#cantidaddeproductos")?.textContent;
 
-        let restantes = nuevosprecios.textContent
-        let preciosnuevov1 = restantes.replace(/\s/g, "").replace("$", "");
-        total = parseInt(preciosnuevov1) - parseInt(total);
-    }
-    document.querySelector('.totalprice').innerHTML = "$ " + total * cantidad;
-
+        total += preciosnuevovsinsignopesos * cantidad;
+    });
+    document.querySelector('.totalprice').innerHTML = "$ " + total;
 }
