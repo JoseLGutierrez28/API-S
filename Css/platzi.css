@@ -71,7 +71,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 62%;
     height: auto;
     object-fit: cover;
 }
