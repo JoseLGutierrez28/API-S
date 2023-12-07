@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #d5dee8;
+}
+
+
+.title {
+    text-align: center;
+    margin: 40px 40px;
+    font-size: 2.25em;
+}
+
+.title:hover {
+    text-shadow: 2px 2px 4px #6980a7;
+}
+
+
+
+.main-container {
+    margin: 0 4%;
+    padding-top: 32px;
+    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 40px
+}
+
+.card {
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    --main-focus: #2d8cf0;
+    width: 230px;
+    height: 300px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 24px;
+}
+
+.card:last-child {
+    justify-content: flex-end;
+}
+
+
+.card-img {
+    overflow: hidden;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--font-color);
+}
+
+.card-divider {
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 50px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.card-price span {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color-sub);
+}
+
+.card-btn {
+    height: 35px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 0 15px;
+    transition: all 0.3s;
+}
+
+.card-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--main-color);
+    transition: all 0.3s;
+}
+
+.card-img:hover {
+    transform: translateY(-3px);
+}
+
+.card-btn:hover {
+    border: 2px solid var(--main-focus);
+}
+
+.card-btn:hover svg {
+    fill: var(--main-focus);
+}
+
+.card-btn:active {
+    transform: translateY(3px);
+}
+
+
+
+.main-orders {
+    display: flex;
+    justify-content: end;
+    display: none;
+}
+
+.section-orders {
+    border: 1px solid black;
+    height: 86%;
+    width: 24%;
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+    bottom: 0px;
+    right: 0px;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.close {
+    width: 8%;
+    height: 8%;
+    cursor: pointer;
+}
+
+.container-title-mis-productos {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgb(98, 95, 95);
+}
+
+.conteainerallinfo {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 20px;
+    padding-top: 60px;
+}
+
+.card-mis-productos {
+    width: 100%;
+    max-width: 380px;
+    height: 110px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgb(98, 95, 95);
+}
+
+.img-mis-productos {
+    width: 88px;
+    height: 88px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+
+figure img {
+    border-radius: 4px;
+}
+
+.textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: black;
+    font-family: 'Poppins' sans-serif;
+}
+
+.textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.span {
+    font-size: 10px;
+}
+
+.h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.p {
+    font-size: 16px;
+    font-weight: lighter;
+    padding-top: 12px;
+}
+
+.buttonsmore {
+    padding-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.price-mis-productos {
+    padding: 4px;
+}
+
+.buttonmore {
+    padding: 4px;
+    border-radius: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+
+svg {
+    cursor: pointer;
+}
+
+.container-footer-mis-productos{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .section-orders{
+        width: 44%;
+    }
+}
+@media (max-width:480px) {
+    .section-orders{
+        width: 93%;
+    }
+}
